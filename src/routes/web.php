@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::view('/', 'welcome');
+
+Route::get('/index','FrontController@index');

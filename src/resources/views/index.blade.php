@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
+
 <div><h2>システムへのご意見をお聞かせください</h2></div>
 <form>
     <div class="row">
@@ -19,15 +20,12 @@
         </div>
     </div>
     <div class="row">
-        <label class="col-sm-3" for="ages">年代<span>※</span></label>
+        <label class="col-sm-3" for="ages">年代（編集中）<span>※</span></label>
         <select id="ages" class="">
             <option disabled selected>選択してください</option>
-            <option>10代以下</option>
-            <option>20代</option>
-            <option>30代</option>
-            <option>40代</option>
-            <option>50代</option>
-            <option>60代以上</option>
+            @foreach ($ages as $age)
+                <option>{{ $age->age }}</option>
+            @endforeach
         </select>
     </div>
     <div class="row">
@@ -51,5 +49,5 @@
         <div class="col-sm-3"></div>
         <input class="col-sm-2" type="button" value="確認">
     </div>
-</form>    
+</form>
 @endsection
