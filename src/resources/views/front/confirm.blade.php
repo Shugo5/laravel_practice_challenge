@@ -2,7 +2,7 @@
 @section('content')
 
 
-<div><h2>システムへのご意見をお聞かせください</h2></div>
+<div><h2>内容確認</h2></div>
 <form>
     <div class="row">
         <label class="col-sm-3" for="">氏名<span>※</span></label>
@@ -23,9 +23,7 @@
         <label class="col-sm-3" for="ages">年代（編集中）<span>※</span></label>
         <select id="ages" class="">
             <option disabled selected>選択してください</option>
-            @foreach ($ages as $age)
-                <option>{{ $age->age }}</option>
-            @endforeach
+
         </select>
     </div>
     <div class="row">

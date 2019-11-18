@@ -13,4 +13,6 @@
 
 Route::view('/', 'welcome');
 
-Route::get('/index','FrontController@index');
+Route::get('/front/index','FrontController@index');
+
+Route::post('/front/confirm','FrontController@confirm');

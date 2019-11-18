@@ -11,7 +11,15 @@ class FrontController extends Controller
 
         $ages = Age::orderBy('sort','asc')->get();
 
-        return view('index',['ages' => $ages]);
+        return view('front/index',['ages' => $ages]);
+    }
+
+    public function confirm(Request $request){
+
+        $fullname = $request->input('fullname');
+
+        return view('front/confirm');
+
     }
 
 }
