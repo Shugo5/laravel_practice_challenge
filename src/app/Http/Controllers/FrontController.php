@@ -16,9 +16,14 @@ class FrontController extends Controller
 
     public function confirm(Request $request){
 
-        $fullname = $request->input('fullname');
-
-        return view('front/confirm');
+        return view('front/confirm',[
+            'fullname' => $request->fullname,
+            'gender' => $request->gender,
+            'age_id' => $request->age_id,
+            'email' => $request->email,
+            'is_send_email' => $request->is_send_email,
+            'feedback' => $request->feedback
+        ]);
 
     }
 

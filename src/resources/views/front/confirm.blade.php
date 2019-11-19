@@ -1,46 +1,35 @@
 @extends('layouts.app')
 @section('content')
 
-
+<div class="container">
 <div><h2>内容確認</h2></div>
 <form>
     <div class="row">
+
+    </div>
+    <div class="row">
         <label class="col-sm-3" for="">氏名<span>※</span></label>
-        <input class="col-sm-3" type="text" placeholder="入力してください">
+        <p class="col-sm-3" name="fullname">{{ $fullname }}</p>
     </div>
     <div class="row">
         <label class="col-sm-3" for="">性別<span>※</span></label>
-        <div class="col-sm-1">
-            <input class="" type="radio" name="radio2" id="radio2a" value="A" checked>
-            <label class="" for="radio2a">男性</label>
-        </div>
-        <div class="col-sm-1">
-            <input class="" type="radio" name="radio2" id="radio2b" value="B">
-            <label class="" for="radio2b">女性</label>
-        </div>
+        <p class="col-sm-3" name="gender">{{ $gender }}</p>
     </div>
     <div class="row">
         <label class="col-sm-3" for="ages">年代（編集中）<span>※</span></label>
-        <select id="ages" class="">
-            <option disabled selected>選択してください</option>
-
-        </select>
+        <p class="col-sm-3" name="age_id">{{ $age_id }}</p>
     </div>
     <div class="row">
         <label class="col-sm-3">メールアドレス<span>※</span></label>
-        <input class="col-sm-3" type="email" placeholder="入力してください">
+        <p class="col-sm-3" name="email">{{ $email }}</p>
     </div>
     <div class="row">
         <label class="col-sm-3">メール送信可否</label>
-        <div class="col-sm-3">
-            <p>登録したメールアドレスにメールマガジンをお送りしてもよろしいですか？</p>
-            <input class="col-sm-1" type="checkbox" checked>
-            <p>送信を許可します</p>
-        </div>
+        <p class="col-sm-3" name="is_send_email">{{ $is_send_email }}</p>
     </div>
     <div class="row">
         <label class="col-sm-3">ご意見</label>
-        <textarea name="" id="" cols="30" rows="5" placeholder="入力してください"></textarea>
+        <p class="col-sm-3" name="feedback">{!! nl2br(e( $feedback )) !!}</p>
     </div>
 
     <div class="row">
@@ -48,4 +37,5 @@
         <input class="col-sm-2" type="button" value="確認">
     </div>
 </form>
+</div>
 @endsection
