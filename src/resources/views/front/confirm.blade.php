@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container">
-<div><h2>内容確認</h2></div>
+<div><h2>予約画面：内容確認</h2></div>
 <form>
     <div class="row">
 
@@ -34,7 +34,11 @@
 
     <div class="row">
         <div class="col-sm-3"></div>
-        <input class="col-sm-2" type="button" value="確認">
+        <input class="col-sm-2" type="button" value="再入力">
+    </div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <input class="col-sm-2" type="button" value="送信">
     </div>
 </form>
 </div>

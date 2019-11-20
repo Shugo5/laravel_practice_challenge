@@ -25,6 +25,21 @@ class FrontController extends Controller
             'feedback' => $request->feedback
         ]);
 
-    }
+        // $validator = Validator::make($request->all(),[
+        //     'fullname' => 'required|max:200',
+        //     'gender' => 'required',
+        //     'age_id' => 'required',
+        //     'email' => 'required',
+        //     'is_send_email' => 'max:255',
+        //     'feedback' => 'max:10000'
+        // ]);
 
+        // if ($validator->fails()){
+        //     return redirect('front/index')
+        //         ->withErrors($validator)
+        //         ->withInput();
+        // }
+
+        // return redirect('/front/confirm');
+    }
 }
