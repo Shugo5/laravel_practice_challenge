@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Age;
+use Validator;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -16,6 +17,21 @@ class FrontController extends Controller
 
     public function confirm(Request $request){
 
+        $validator = Validator::make($request->all(),[
+            'fullname' => 'required|max:200',
+            'gender' => 'required',
+            'age_id' => 'required',
+            'email' => 'required',
+            'is_send_email' => 'max:255',
+            'feedback' => 'max:10000'
+        ]);
+
+        if ($validator->fails()){
+            return redirect('front/index')
+                ->withErrors($validator)
+                ->withInput();
+        }
+
         return view('front/confirm',[
             'fullname' => $request->fullname,
             'gender' => $request->gender,
@@ -24,22 +40,5 @@ class FrontController extends Controller
             'is_send_email' => $request->is_send_email,
             'feedback' => $request->feedback
         ]);
-
-        // $validator = Validator::make($request->all(),[
-        //     'fullname' => 'required|max:200',
-        //     'gender' => 'required',
-        //     'age_id' => 'required',
-        //     'email' => 'required',
-        //     'is_send_email' => 'max:255',
-        //     'feedback' => 'max:10000'
-        // ]);
-
-        // if ($validator->fails()){
-        //     return redirect('front/index')
-        //         ->withErrors($validator)
-        //         ->withInput();
-        // }
-
-        // return redirect('/front/confirm');
     }
 }

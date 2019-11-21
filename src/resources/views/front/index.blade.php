@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-{{-- @include('common.errors') --}}
+@include('common.errors')
 
 <div class="container">
 <div><h2>システムへのご意見をお聞かせください</h2></div>
