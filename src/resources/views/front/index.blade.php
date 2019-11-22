@@ -9,7 +9,7 @@
     {{ csrf_field() }}
     <div class="row">
         <label class="col-sm-3" for="">氏名<span>※</span></label>
-        <input class="col-sm-3" name="fullname" type="text" placeholder="入力してください">
+        <input class="col-sm-3" name="fullname" type="text" value="{{ old('fullname') }}" placeholder="入力してください">
     </div>
     <div class="row">
         <label class="col-sm-3" for="">性別<span>※</span></label>
@@ -35,7 +35,7 @@
     </div>
     <div class="row">
         <label class="col-sm-3">メールアドレス<span>※</span></label>
-        <input class="col-sm-3" name="email" type="email" placeholder="入力してください">
+        <input class="col-sm-3" name="email" type="email" value="{{ old('email') }}" placeholder="入力してください">
     </div>
     <div class="row">
         <label class="col-sm-3">メール送信可否</label>
