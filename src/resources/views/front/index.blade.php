@@ -15,12 +15,12 @@
         <label class="col-sm-3" for="">性別<span>※</span></label>
         <div class="col-sm-1">
             <label class="" for="radio2a">
-                <input class="" type="radio" name="gender" id="radio2a" value="男性" checked> 男性
+                <input class="" type="radio" name="gender" id="radio2a" value="1" checked> 男性
             </label>
         </div>
         <div class="col-sm-1">
             <label class="" for="radio2b">
-                <input class="" type="radio" name="gender" id="radio2b" value="女性"> 女性
+                <input class="" type="radio" name="gender" id="radio2b" value="2"> 女性
             </label>
         </div>
     </div>

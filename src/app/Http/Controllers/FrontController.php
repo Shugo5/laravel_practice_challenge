@@ -23,7 +23,7 @@ class FrontController extends Controller
             'age_id' => 'required',
             'email' => 'required',
             'is_send_email' => 'max:255',
-            'feedback' => 'max:10000'
+            'feedback' => 'max:1000'
         ]);
 
         if ($validator->fails()){
