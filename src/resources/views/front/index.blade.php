@@ -29,7 +29,7 @@
         <select name="age_id" id="ages">
             <option disabled selected>選択してください</option>
             @foreach ($ages as $age)
-                <option>{{ $age->age }}</option>
+                <option>{{ $age->id }}</option>
             @endforeach
         </select>
     </div>
@@ -41,8 +41,8 @@
         <label class="col-sm-3">メール送信可否</label>
         <div class="col-sm-3">
             <p>登録したメールアドレスにメールマガジンをお送りしてもよろしいですか？</p>
-            <input name="is_send_email" value="送信不可" type="hidden">
-            <input class="col-sm-1" name="is_send_email" value="送信許可" type="checkbox" checked>
+            <input name="is_send_email" value="0" type="hidden">
+            <input class="col-sm-1" name="is_send_email" value="1" type="checkbox" checked>
             <p>送信を許可します</p>
         </div>
     </div>
