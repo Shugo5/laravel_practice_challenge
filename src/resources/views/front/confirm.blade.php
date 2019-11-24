@@ -62,13 +62,10 @@
     <textarea class="col-sm-2" name="feedback" value="">{!! nl2br(e( $feedback )) !!}</textarea>
 </div>
 
-{{-- <form action="{{ url('front/index') }}" method="POST">
-        {{ csrf_field() }}
-    <div class="row">
-        <div class="col-sm-3"></div>
-        <input class="col-sm-2" type="submit" value="再入力">
-    </div>
-</form> --}}
+<!-- 再入力 -->
+<div class="col-sm-3">
+    <button type="button" class="btn bg-secondary" onclick=history.back()>再入力</button>
+</div>
 
 <div class="row">
     <div class="col-sm-3"></div>

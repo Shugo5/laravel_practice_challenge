@@ -30,6 +30,7 @@
             <option disabled selected>選択してください</option>
             @foreach ($ages as $age)
                 <option>{{ $age->id }}</option>
+                {{-- 一度上記で進める。本当は{{ $age->age }}でやりたいんだけどね。 --}}
             @endforeach
         </select>
     </div>
