@@ -15,22 +15,24 @@
         <label class="col-sm-3" for="">性別<span>※</span></label>
         <div class="col-sm-1">
             <label class="" for="radio2a">
-                <input class="" type="radio" name="gender" id="radio2a" value="1" checked> 男性
+                <input class="" type="radio" name="gender" value="1" @if(old('gender')) checked @endif checked> 男性
             </label>
         </div>
         <div class="col-sm-1">
             <label class="" for="radio2b">
-                <input class="" type="radio" name="gender" id="radio2b" value="2"> 女性
+                <input class="" type="radio" name="gender" value="2" @if(old('gender')) checked @endif> 女性
             </label>
         </div>
     </div>
     <div class="row">
         <label class="col-sm-3" for="ages">年代（編集中）<span>※</span></label>
         <select name="age_id" id="ages">
-            <option disabled selected>選択してください</option>
+            <option selected disabled>選択してください</option>
             @foreach ($ages as $age)
-                <option>{{ $age->id }}</option>
-                {{-- 一度上記で進める。本当は{{ $age->age }}でやりたいんだけどね。 --}}
+                {{-- <option value="{{ $age->id }}">{{ $age->age }}</option> --}}
+                <option value="{{ $age->id }}" @if(old('age_id')==$age->id) selected @endif>{{ $age->age }}</option>
+
+                {{-- valueで送る内容を指定、option内に表示する内容を指定した。 --}}
             @endforeach
         </select>
     </div>
@@ -42,14 +44,15 @@
         <label class="col-sm-3">メール送信可否</label>
         <div class="col-sm-3">
             <p>登録したメールアドレスにメールマガジンをお送りしてもよろしいですか？</p>
-            <input name="is_send_email" value="0" type="hidden">
-            <input class="col-sm-1" name="is_send_email" value="1" type="checkbox" checked>
+            {{-- <input name="is_send_email" value="0" type="hidden">
+            <input name="is_send_email" value="1" type="checkbox" class="col-sm-1" checked> --}}
+            <input name="is_send_email" value="1" type="checkbox" class="col-sm-1" {!! empty(old()) || old('is_send_email') == 1 ? 'checked="checked"' : '' !!}>
             <p>送信を許可します</p>
         </div>
     </div>
     <div class="row">
         <label class="col-sm-3">ご意見</label>
-        <textarea name="feedback" id="" cols="30" rows="5" placeholder="入力してください"></textarea>
+        <textarea name="feedback" id="" value="" cols="30" rows="5" placeholder="入力してください">{{ old('feedback') }}</textarea>
     </div>
 
     <div class="row">

@@ -53,24 +53,25 @@
 </form>
 <form action="{{ url('front/index') }}" method="POST">
     {{ csrf_field() }}
-<div class="row">
-    <input class="col-sm-1" name="fullname" value="{{ $fullname }}">
-    <input class="col-sm-1" name="gender" value="{{ $gender }}">
-    <input class="col-sm-1" name="age_id" value="{{ $age_id }}">
-    <input class="col-sm-2" name="email" value="{{ $email }}">
-    <input class="col-sm-1" name="is_send_email" value="{{ $is_send_email }}">
-    <textarea class="col-sm-2" name="feedback" value="">{!! nl2br(e( $feedback )) !!}</textarea>
-</div>
+    <div class="row">
+        <h4>実際に保存するデータ</h4>
+        <input class="col-sm-1" name="fullname" value="{{ $fullname }}">
+        <input class="col-sm-1" name="gender" value="{{ $gender }}">
+        <input class="col-sm-1" name="age_id" value="{{ $age_id }}">
+        <input class="col-sm-2" name="email" value="{{ $email }}">
+        <input class="col-sm-1" name="is_send_email" value="{{ $is_send_email }}">
+        <textarea class="col-sm-2" name="feedback" value="">{!! nl2br(e( $feedback )) !!}</textarea>
+    </div>
 
-<!-- 再入力 -->
-<div class="col-sm-3">
-    <button type="button" class="btn bg-secondary" onclick=history.back()>再入力</button>
-</div>
+    <!-- 再入力 -->
+    <div class="col-sm-3">
+        <button type="button" class="btn bg-secondary" onclick=history.back()>再入力</button>
+    </div>
 
-<div class="row">
-    <div class="col-sm-3"></div>
-    <input class="col-sm-2" type="submit" value="送信">
-</div>
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <input class="col-sm-2" type="submit" value="送信">
+    </div>
 </form>
 </div>
 @endsection
