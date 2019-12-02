@@ -19,13 +19,36 @@
                     女性
                     @break
                 @default
-                    どっちやねん笑
+                    どっち？
             @endswitch
         </p>
     </div>
     <div class="row">
-        <label class="col-sm-3" for="ages">年代（編集中）<span>※</span></label>
-        <p class="col-sm-3" name="age_id">{{ $age_id }}</p>
+        <label class="col-sm-3" for="">年代（編集中）<span>※</span></label>
+        <p class="col-sm-3" name="age_id">
+            @switch($age_id)
+                @case(1)
+                    10代以下
+                    @break
+                @case(2)
+                    20代
+                    @break
+                @case(3)
+                    30代
+                    @break
+                @case(4)
+                    40代
+                    @break
+                @case(5)
+                    50代
+                    @break
+                @case(6)
+                    60代
+                    @break
+                @default
+                    どれ？
+            @endswitch
+        </p>
     </div>
     <div class="row">
         <label class="col-sm-3">メールアドレス<span>※</span></label>
@@ -42,7 +65,7 @@
                     送信可能
                     @break
                 @default
-                    どっちやねん笑
+                    どっち笑
             @endswitch
         </p>
     </div>
@@ -60,14 +83,14 @@
         <input class="col-sm-1" name="age_id" value="{{ $age_id }}">
         <input class="col-sm-2" name="email" value="{{ $email }}">
         <input class="col-sm-1" name="is_send_email" value="{{ $is_send_email }}">
-        <textarea class="col-sm-2" name="feedback" value="">{!! nl2br(e( $feedback )) !!}</textarea>
+        <textarea class="col-sm-2" name="feedback" value="">{{ $feedback }}</textarea>
     </div>
 
     <!-- 再入力 -->
     <div class="col-sm-3">
         <button type="button" class="btn bg-secondary" onclick=history.back()>再入力</button>
     </div>
-
+    {{-- onclick=history.back()で、クリック後、前画面に戻る。入力内容は保持される。 --}}
     <div class="row">
         <div class="col-sm-3"></div>
         <input class="col-sm-2" type="submit" value="送信">

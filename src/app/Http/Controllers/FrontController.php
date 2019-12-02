@@ -60,6 +60,7 @@ class FrontController extends Controller
                 ->withErrors($validator);
         }
 
+        // 以下で入力値を、answerテーブルに保存する。
         $answer = new Answer;
         $answer->fullname = $request->fullname;
         $answer->gender = $request->gender;
@@ -87,7 +88,6 @@ class FrontController extends Controller
             return redirect('front/index')
                 ->withInput()
                 ->withErrors($validator);
-
         }
 
         return view('front/confirm',[

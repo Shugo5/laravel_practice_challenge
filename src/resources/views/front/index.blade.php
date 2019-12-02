@@ -15,12 +15,12 @@
         <label class="col-sm-3" for="">性別<span>※</span></label>
         <div class="col-sm-1">
             <label class="" for="radio2a">
-                <input class="" type="radio" name="gender" value="1" @if(old('gender')) checked @endif checked> 男性
+                <input class="" type="radio" name="gender" value="1" {{ old('gender') == '1' ? 'checked' : '' }} checked> 男性
             </label>
         </div>
         <div class="col-sm-1">
             <label class="" for="radio2b">
-                <input class="" type="radio" name="gender" value="2" @if(old('gender')) checked @endif> 女性
+                <input class="" type="radio" name="gender" value="2" {{ old('gender') == '2' ? 'checked' : '' }}> 女性
             </label>
         </div>
     </div>
@@ -44,8 +44,7 @@
         <label class="col-sm-3">メール送信可否</label>
         <div class="col-sm-3">
             <p>登録したメールアドレスにメールマガジンをお送りしてもよろしいですか？</p>
-            {{-- <input name="is_send_email" value="0" type="hidden">
-            <input name="is_send_email" value="1" type="checkbox" class="col-sm-1" checked> --}}
+            <input name="is_send_email" value="0" type="hidden">
             <input name="is_send_email" value="1" type="checkbox" class="col-sm-1" {!! empty(old()) || old('is_send_email') == 1 ? 'checked="checked"' : '' !!}>
             <p>送信を許可します</p>
         </div>

@@ -23,7 +23,7 @@
         <div class="container">
             <!-- ナビバーの内容 -->
             <nav class="navbar navbar-expand-lg bg-dark">
-                <a class="navbar-brand" href="/">アンケート管理システム（作成中）</a>
+                <a class="navbar-brand" href="/front/index">アンケート管理システム（作成中）</a>
             </nav>
         </div>
         @yield('content')
