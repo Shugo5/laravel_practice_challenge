@@ -20,3 +20,8 @@ Route::get('/front/index','FrontController@index');
 Route::post('/front/index','FrontController@index_second');
 
 Route::post('/front/confirm','FrontController@confirm');
+
+// 勉強の為、下記をコマンドアウトした。
+// Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
