@@ -19,10 +19,10 @@ class CreateAnswersTable extends Migration
             $table->tinyInteger('gender');
             $table->integer('age_id');
             $table->string('email');// デフォルトで255
-            $table->tinyInteger('is_send_email');
-            $table->text('feedback');
+            $table->tinyInteger('is_send_email')->nullable();
+            $table->text('feedback')->nullable();
             $table->timestamps();
-            $table->softDeletes();	
+            $table->softDeletes();
         });
 
     }
