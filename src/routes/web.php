@@ -15,7 +15,7 @@
 Route::view('/', 'welcome');
 
 // Ageデータベースからageを取り出しドロップダウンメニューに反映。
-Route::get('/front/index','FrontController@index');
+// Route::get('/front/index','FrontController@index');
 
 Route::post('/front/index','FrontController@index_second');
 
@@ -35,5 +35,6 @@ Route::post('system/password/email', 'Auth\ForgotPasswordController@sendResetLin
 Route::get('system/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('system/password/reset', 'Auth\ResetPasswordController@reset');
 
+Route::get('system/answer/index', 'AnswerController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
