@@ -15,7 +15,7 @@
 Route::view('/', 'welcome');
 
 // Ageデータベースからageを取り出しドロップダウンメニューに反映。
-// Route::get('/front/index','FrontController@index');
+Route::get('/front/index','FrontController@index');
 
 Route::post('/front/index','FrontController@index_second');
 
