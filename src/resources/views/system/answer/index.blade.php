@@ -5,6 +5,11 @@
 @include('common.errors')
 
 
+{{ Form::open() }}
+    タイトル:{{ Form::text('fullname', $fullname) }}
+    {{ Form::submit('検索') }}
+{{ Form::close() }}
+
 {{--
 {{ $answers->count() }}現在のページのアイテム数
 {{ $answers->currentPage() }}現在のページ数
